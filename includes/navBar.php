@@ -21,8 +21,20 @@
                     {
                         */?>
                         
-                        <li role="presentation" ><a href="lib/movie-add.php">Mes campagnes</a></li>
-                        <li role="presentation" ><a href="lib/movie-add.php">Répondre</a></li>
+                        <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes campagnes <b class="caret"></b></a>
+                            <ul class="dropdown-menu"> 
+                                <li><a href="#">Nouvelle campagne</a></li>
+                                <li><a href="#">Gérer mes campagnes</a></li>
+                                <li><a href="#">Résultats</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li role="presentation" class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown">Répondre <b class="caret"></b></a>
+                            <ul class="dropdown-menu"> 
+                                <li><a href="#">Liste des campagnes publiques</a></li>
+                                <li><a href="#">Mes réponses</a></li>
+                            </ul>
+                        </li>
                         
                         <?php 
                     /* }*/
