@@ -24,10 +24,11 @@
                 </div>
                 <div class="col-lg-6">
                     <p class="alinea"> 
-                        <br/> Bienvenue sur IRAEER, le site qui vous permet d'évaluer la qualité de vos sites web !
+                        <br/> Bienvenue sur <b>IRAEER</b>, le site qui vous permet d'<em>évaluer la qualité</em> de vos sites web !
                         <br/> Pour cela, rien de plus simple, créer un compte (c'est gratuit !) ou connectez-vous et vous pourrez alors réaliser 
                         des campagnes de tests pour évaluer le contenu, l'attrait et l'utilisabilité de votre site web.
                         <br/>En créant un compte, vous aurez accès à :
+                    
                         <ul class="accueil">
                             <li> la création de campagnes de tests,</li> 
                             <li> aux réponses à vos campagnes et leurs analyses, </li>
@@ -35,9 +36,11 @@
                         </ul>
                     </p>
                 </div>
-                <div class="col-lg-2 col-lg-offset-1">
-                    <button>1</button>
-                    <button>2</button>
+                <div class="col-lg-3" id="colButton">
+                    <br/><br/><br/><br/><br/><br/>
+                    <button> Présentation du questionnaire </button>
+                    <br/><br/><br/>
+                    <button> Accéder à la liste <br/> des campagnes publiques </button>
                 </div>
             </div>
         </div>

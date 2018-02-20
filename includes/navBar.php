@@ -17,18 +17,20 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-target">
             <ul class="nav navbar-nav">
                 <?php
-                   /* if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
+                   /*if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                     {
-                        ?>
-                        <li ><a href="lib/movie-add.php">Mes campagnes</a></li>
-                        <li ><a href="lib/movie-add.php">Répondre</a></li>
+                        */?>
+                        
+                        <li role="presentation" ><a href="lib/movie-add.php">Mes campagnes</a></li>
+                        <li role="presentation" ><a href="lib/movie-add.php">Répondre</a></li>
+                        
                         <?php 
-                     }*/
+                    /* }*/
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <?php
                             /*if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
@@ -42,7 +44,7 @@
                                 <?php
                            // }
                         ?>
-                    </a>-->
+                    </a>
                     <ul class="dropdown-menu"> 
                    
                         <?php

@@ -4,10 +4,29 @@
     background-color: rgb(255, 255, 255);
 }
 
-.alinea { text-indent: 2em; }
+.alinea { 
+    text-indent: 2em;
+    text-align : justify;
+}
 
 .accueil{
     font-size : 20px;
+}
+
+#colButton{
+    text-align: center;
+    margin-bottom:100px;
+}
+
+#image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pres{
+    text-align : justify;
+    font-size : 15px;
 }
 
 footer {
