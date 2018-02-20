@@ -19,6 +19,10 @@
         <p>
             test 1
         </p>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         <?php echo('test2'); ?>
         
         <!-- plugins bootstrap -->
