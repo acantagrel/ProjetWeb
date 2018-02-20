@@ -1,12 +1,25 @@
 
 
+.jumbotron {
+    background-color: rgb(255, 255, 255);
+}
 
+.alinea { text-indent: 2em; }
 
+.accueil{
+    font-size : 20px;
+}
 
-
-.footer {
+footer {
     border-top: 1px solid rgb(173, 173, 173);
     padding-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+    background-color: white;
+    height :30px;
+	position :fixed;
+	bottom :0px;
+	left :0px;
+	right :0px;
+	
 }
