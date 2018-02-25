@@ -1,5 +1,9 @@
-<?php //session_start() //require("lib/login.php"); ?>
-
+<?php 
+    function escape($valeur)
+        {
+            return htmlspecialchars($valeur,ENT_QUOTES,'UTF-8',false);
+        }
+?>
 
 <!-- barre de navigation -->
     <div class="navbar navbar-default" role="navigation">
@@ -68,8 +72,8 @@
                             } else
                             {*/
                                 ?>
-                                <li><a href="#">Se connecter</a></li>
-                                <li><a href="#">Créer un compte</a></li>
+                                <li><a href="../lib/login.php">Se connecter</a></li>
+                                <li><a href="../lib/signup.php">Créer un compte</a></li>
                                 <?php
                             //}
                         ?>

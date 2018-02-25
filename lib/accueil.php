@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <html>
     <!-- Page d'accueil -->
     <head>
