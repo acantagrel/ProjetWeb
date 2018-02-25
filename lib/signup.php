@@ -76,22 +76,29 @@
                         ?>
                     </select>
                     <br/><br/>
-                    <div class="form-group has-error">
+                    <!--<div class="form-group has-error">
                         <label class="control-label" for="login">Login : </label>
                         <input type="text" class="form-control"  id="login" name="login" placeholder="Entrez votre identifiant" />
                         <span class="help-block">Cet identifiant a déjà été utilisé</span>
-                    </div>
+                    </div>-->
+                    <label class="control-label" for="login">Login : </label>
+                    <input type="text" id="login" name="login" size="40" placeholder="Entrez votre identifiant" />
                     <br/>
                     <label for="mdp">Mot de passe : </label>
-                    <input  type="password" name="mdp" placeholder="Entrez un mot de passe" />
+                    <input  type="password" name="mdp" size="40" placeholder="Entrez un mot de passe" />
                     <br/><br/>
                     <label for="mdp">Vérification du mot de passe : </label>
-                    <input  type="password" name="mdp" placeholder="Entrez votre mot de passe à nouveau" />
+                    <input  type="password" name="mdp" size="40" placeholder="Entrez votre mot de passe à nouveau" />
                     <br/><br/>
                     <input type = "submit" value="Envoyer" />
                 </fieldset>
             </form>
         </div> 
+
+        <!-- plugins bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../jquery/jquery.min.js"></script>
 
         <?php 
             include "../includes/footer.php";

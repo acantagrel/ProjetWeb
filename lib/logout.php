@@ -21,6 +21,11 @@
             print "<br/> <br/> <a href='/accueil.php' ><input type='button' value='Accueil'></a>";
         ?>
 
+        <!-- plugins bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../jquery/jquery.min.js"></script>
+
         <?php
             include "../includes/footer.php";
         ?>
