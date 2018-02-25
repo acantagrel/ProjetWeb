@@ -58,12 +58,12 @@
                             <br/>
                             <div class="form-group has-error">
                                 <label class="control-label" for="login">Login : </label>
-                                <input type="text" class="form-control"  id="login" name="login" placeholder="Entrez votre identifiant" />
+                                <input type="text" class="form-control" size='40' id="login" name="login" placeholder="Entrez votre identifiant" />
                                 <span class="help-block">Veuillez rentrer un identifiant correct s'il vous plait</span>
                             </div>
                             <br/>
                             <label for="mdp">Mot de passe : </label>
-                            <input  type="password" name="mdp" placeholder="Entrez votre mot de passe" />
+                            <input  type="password" name="mdp" size='40' placeholder="Entrez votre mot de passe" />
                             <br/><br/>
                             <input type = "submit" value="Envoyer" />
                         </fieldset>
