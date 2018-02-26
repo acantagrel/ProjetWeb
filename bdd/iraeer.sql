@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 26 fév. 2018 à 09:28
+-- Généré le :  lun. 26 fév. 2018 à 10:55
 -- Version du serveur :  10.1.30-MariaDB
--- Version de PHP :  7.2.2
+-- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,9 +51,17 @@ CREATE TABLE `profil` (
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `naissance` date NOT NULL,
-  `login` int(50) NOT NULL,
-  `mdp` int(50) NOT NULL
+  `login` varchar(50) NOT NULL,
+  `mdp` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `profil`
+--
+
+INSERT INTO `profil` (`id`, `nom`, `prenom`, `naissance`, `login`, `mdp`) VALUES
+(0, 'Cantagrel', 'Alice', '0000-00-00', 'alice', 'test'),
+(1, 'Dupont', 'Jean', '1970-01-01', 'jean', 'password');
 
 -- --------------------------------------------------------
 

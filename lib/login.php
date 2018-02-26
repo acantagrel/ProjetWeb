@@ -14,6 +14,7 @@
     <body>
         <?php 
             include "../includes/navBar.php";
+            include "../includes/connect.php";
         ?>
 
        
@@ -44,7 +45,6 @@
                         
                     
                     $_SESSION['login']=$login;
-                    
                     $_SESSION['mdp']=$mdp;
                     header("location:accueil.php");// permet de retourner sur une page 
                 }

@@ -15,6 +15,7 @@
     <body>
         <?php
             include "../includes/navBar.php"
+            include "../includes/connect.php";
         ?>
 
         <div class="container">

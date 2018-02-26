@@ -14,7 +14,32 @@
     <body>
         <?php 
             include "../includes/navBar.php";
+            include "../includes/connect.php";
         ?>
+
+        <?php
+            //Gestion BDD
+            if (!empty($_POST['nom']) || !empty($_POST['prenom']) || !empty($_POST['naissance']) || !empty($_POST['login']) || !empty($_POST['mdp']) )
+            {
+                $nom = $_POST['nom'];
+                $prenom = $_POST['prenom'];
+                $naissance = $_POST['annee']."-".$_POST['mois']."-".$_POST['jour'];
+                $dateNaiss = $naissance;
+                $login = $_POST['login'];
+                $mdp = $_POST['mdp'];
+
+                //requêtes
+                $req1 = $BDD->prepare("INSERT INTO PROFIL(nom, prenom, naissance, login, mdp) VALUES (:nom, :prenom, :naissance, :login, :mdp)");
+                $req1->execute(array(
+                    'nom' => $_POST['nom'],
+                    'prenom' => $_POST['prenom'],
+                    'naissance' => $naissance,
+                    'login' => $_POST['login'],
+                    'mdp' => $_POST['mdp']));
+                    //$_POST['nom'], $_POST['prenom'], $naissance, $_POST['login'], $_POST['mdp']));
+            }
+        ?>
+
 
         <div class="form">
             <form method="POST" action="signup.php">
