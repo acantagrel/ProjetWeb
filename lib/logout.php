@@ -18,7 +18,7 @@
             
             session_destroy();
             echo "Vous vous êtes bien déconnecté.";
-            print "<br/> <br/> <a href='/accueil.php' ><input type='button' value='Accueil'></a>";
+            print "<br/> <br/> <a href='accueil.php' ><input type='button' value='Accueil'></a>";
         ?>
 
         <!-- plugins bootstrap -->

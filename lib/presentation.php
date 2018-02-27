@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php
-            include "../includes/navBar.php"
+            include "../includes/navBar.php";
             include "../includes/connect.php";
         ?>
 

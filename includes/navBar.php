@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-target">
             <ul class="nav navbar-nav">
                 <?php
-                   /*if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
+                   if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                     {
-                        */?>
+                        ?>
                         
                         <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes campagnes <b class="caret"></b></a>
                             <ul class="dropdown-menu"> 
-                                <li><a href="#">Nouvelle campagne</a></li>
+                                <li><a href="nouvcampagne.php">Nouvelle campagne</a></li>
                                 <li><a href="#">Gérer mes campagnes</a></li>
                                 <li><a href="#">Résultats</a></li>
                             </ul>
@@ -41,41 +41,41 @@
                         </li>
                         
                         <?php 
-                    /* }*/
+                     }
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <?php
-                            /*if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
+                            if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
                                 ?>
                                 <span class="glyphicon glyphicon-user"></span> <?= "Bienvenue ".$_SESSION['login']; ?><b class="caret"></b>  
                                 <?php
                             } else
                             {
-                               */ ?>
+                                ?>
                                 <span class="glyphicon glyphicon-user"></span> Non connecté <b class="caret"></b>
                                 <?php
-                           // }
+                            }
                         ?>
                     </a>
                     <ul class="dropdown-menu"> 
                    
                         <?php
-                          /*  if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
+                            if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
                                 ?>
-                                <li><a href="lib/logout.php"> Déconnexion </a></li>
+                                <li><a href="../lib/logout.php"> Déconnexion </a></li>
                                 <?php
                             } else
-                            {*/
+                            {
                                 ?>
                                 <li><a href="../lib/login.php">Se connecter</a></li>
                                 <li><a href="../lib/signup.php">Créer un compte</a></li>
                                 <?php
-                            //}
+                            }
                         ?>
                     </ul>
                 </li>

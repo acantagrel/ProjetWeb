@@ -21,22 +21,36 @@
             //Gestion BDD
             if (!empty($_POST['nom']) || !empty($_POST['prenom']) || !empty($_POST['naissance']) || !empty($_POST['login']) || !empty($_POST['mdp']) )
             {
+                //$id;
                 $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
                 $naissance = $_POST['annee']."-".$_POST['mois']."-".$_POST['jour'];
-                $dateNaiss = $naissance;
+                //$dateNaiss = $naissance;
                 $login = $_POST['login'];
                 $mdp = $_POST['mdp'];
+                
 
                 //requêtes
-                $req1 = $BDD->prepare("INSERT INTO PROFIL(nom, prenom, naissance, login, mdp) VALUES (:nom, :prenom, :naissance, :login, :mdp)");
+                $req0 = "SELECT * FROM PROFIL WHERE id = (SELECT Max(id) FROM PROFIL)"; //where id=max(id);
+                $recup = $BDD->query($req0);
+                $profil=$recup->fetch();
+                $maxid=$profil['id'];
+                print_r( $maxid);
+
+                $req1 = $BDD->prepare("INSERT INTO PROFIL(id, nom, prenom, naissance, login, mdp) VALUES (:id, :nom, :prenom, :naissance, :login, :mdp)");
                 $req1->execute(array(
+                    'id' => $maxid+1,
                     'nom' => $_POST['nom'],
                     'prenom' => $_POST['prenom'],
                     'naissance' => $naissance,
                     'login' => $_POST['login'],
                     'mdp' => $_POST['mdp']));
                     //$_POST['nom'], $_POST['prenom'], $naissance, $_POST['login'], $_POST['mdp']));
+
+
+                //vérifier si le login n'existe pas déjà
+                //$req3 = "SELECT ";
+                //vérifier que les deux mdp sont égaux
             }
         ?>
 
@@ -101,19 +115,14 @@
                         ?>
                     </select>
                     <br/><br/>
-                    <!--<div class="form-group has-error">
-                        <label class="control-label" for="login">Login : </label>
-                        <input type="text" class="form-control"  id="login" name="login" placeholder="Entrez votre identifiant" />
-                        <span class="help-block">Cet identifiant a déjà été utilisé</span>
-                    </div>-->
                     <label class="control-label" for="login">Login : </label>
                     <input type="text" id="login" name="login" size="40" placeholder="Entrez votre identifiant" />
-                    <br/>
+                    <br/><br/>
                     <label for="mdp">Mot de passe : </label>
                     <input  type="password" name="mdp" size="40" placeholder="Entrez un mot de passe" />
                     <br/><br/>
-                    <label for="mdp">Vérification du mot de passe : </label>
-                    <input  type="password" name="mdp" size="40" placeholder="Entrez votre mot de passe à nouveau" />
+                    <label for="mdp2">Vérification du mot de passe : </label>
+                    <input  type="password" name="mdp2" size="40" placeholder="Entrez votre mot de passe à nouveau" />
                     <br/><br/>
                     <input type = "submit" value="Envoyer" />
                 </fieldset>

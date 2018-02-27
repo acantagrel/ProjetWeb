@@ -21,13 +21,13 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-lg-offset-1 col-lg-2">
-                    <img src="../images/logoIRAEER.png" class="img-responsive"/>
+                    <img src="../images/logoIRAEER.png" class="img-responsive" id="image"/>
                 </div>
                 <div class="col-lg-6">
                     <p class="alinea"> 
                         <br/> Bienvenue sur <abbr title="Interface web de Recueil d’Avis d’Expérimentateur et d’Evaluation de Ressentis"><b>IRAEER</b></abbr>, le site qui vous permet d'<em>évaluer la qualité</em> de vos sites web !
                         <br/> Pour cela, rien de plus simple, créer un compte (c'est gratuit !) ou connectez-vous et vous pourrez alors réaliser 
-                        des campagnes de tests pour évaluer le contenu, l'attrait et l'utilisabilité de votre site web.
+                        des campagnes de tests pour évaluer le contenu, l'attrait et l'utilisabilité de vos interfaces.
                         <br/>En créant un compte, vous aurez accès à :
                     
                         <ul class="accueil">
