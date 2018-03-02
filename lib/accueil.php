@@ -38,10 +38,10 @@
                     </p>
                 </div>
                 <div class="col-lg-3" id="colButton">
-                    <br/><br/><br/><br/><br/><br/>
-                    <button> Présentation du questionnaire </button>
-                    <br/><br/><br/>
-                    <button> Accéder à la liste <br/> des campagnes publiques </button>
+                    <?php 
+                        include "../includes/buttons.php";
+                    ?>
+                    
                 </div>
             </div>
         </div>

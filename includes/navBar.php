@@ -6,7 +6,7 @@
 ?>
 
 <!-- barre de navigation -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" >
         <div class="navbar-header">
             <!-- Bouton d'accès affiché à droite si la zone d'affichage est trop petite -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
@@ -46,7 +46,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="margin-right: 10px;" >
                         <?php
                             if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
