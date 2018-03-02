@@ -7,6 +7,6 @@
         }
     catch (Exception $e)
         {
-            die('Vous n\'accéder pas à la base. Erreur : '.$e->getMessage());
+            die('Vous n\'accédez pas à la base. Erreur : '.$e->getMessage());
         }
 ?>
