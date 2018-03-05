@@ -28,15 +28,15 @@
                         <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes campagnes <b class="caret"></b></a>
                             <ul class="dropdown-menu"> 
                                 <li><a href="nouvcampagne.php">Nouvelle campagne</a></li>
-                                <li><a href="#">Gérer mes campagnes</a></li>
-                                <li><a href="#">Résultats</a></li>
+                                <li><a href="gestioncamp.php">Gérer mes campagnes</a></li>
+                                <li><a href="resultats.php">Résultats</a></li>
                             </ul>
                         </li>
                         
                         <li role="presentation" class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown">Répondre <b class="caret"></b></a>
                             <ul class="dropdown-menu"> 
-                                <li><a href="#">Liste des campagnes publiques</a></li>
-                                <li><a href="#">Mes réponses</a></li>
+                                <li><a href="lscampublique.php">Liste des campagnes publiques</a></li>
+                                <li><a href="mesrep.php">Mes réponses</a></li>
                             </ul>
                         </li>
                         

@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-lg-offset-1 col-lg-8">
-                <h3 style="text-align:center;">Mes réponses</h3>
+                <h3 style="text-align:center;">Résultats</h3>
 
             </div>
             <div class="col-lg-3">
@@ -29,6 +29,8 @@
                 ?>
             </div>
         </div>
+
+
 
 
         

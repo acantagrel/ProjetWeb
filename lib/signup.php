@@ -36,7 +36,7 @@
                 $recup = $BDD->query($req0);
                 $profil=$recup->fetch();
                 $maxid=$profil['id'];
-                print_r( $maxid);
+                //print_r( $maxid);
 
                 $req1 = $BDD->prepare("INSERT INTO PROFIL(id, nom, prenom, naissance, login, mdp) VALUES (:id, :nom, :prenom, :naissance, :login, :mdp)");
                 $req1->execute(array(

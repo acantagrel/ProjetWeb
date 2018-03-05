@@ -3,6 +3,6 @@
     <input type="submit" value="Présentation du questionnaire" />
 </form>
     <br/>
-<form action="#">
+<form action="lscampublique.php">
     <button type="submit">Accéder à la liste <br/> des campagnes publiques</button>
 </form>
