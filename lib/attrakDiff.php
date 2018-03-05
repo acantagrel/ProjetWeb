@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +7,14 @@
     <link rel="icon" href="../images/logoIRAEER.png"  type="image/png">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/iraeer.css" />
+
 </head>
+
 <body>
-    <?php include_once "../includes/connect.php";
+<?php include_once "../includes/connect.php";
+    include_once "../includes/navBar.php";
     $req="SELECT * FROM donneeattr";
     $res=$BDD->query($req);
     
@@ -21,11 +25,12 @@
         foreach ($res as $ligne){ ?>
         <div class="form-group">
             <div class="container">
-                <div class="jumbotron">
-                    <div class="row">
+                
+                    
                         <div class="col-md-2">
                             <?= $ligne['gauche']?>
                         </div>
+                        <div class="col-md-7">
                         <div class="form-check">
                             <label class="form-check-label">
                                 <?php 
@@ -44,18 +49,21 @@
                                     <div class="col-md-1">
                                         <input type="radio" class="form-check-input" name="<?= $ligne['partie']?><?=$ligne['numeroPartie']?>" id="<?= $ligne['partie']?><?=$ligne['numeroPartie']?><?=-($i-4)?>" value="<?=-($i-4)?>">
                                         
-                                        </div>
-                                        <?php } 
+                                    </div>
+                                <?php } 
                                     }?>
                                                              
-                                </label>
-                            </div>
-                            <div class="col-md-2">
+                            </label>
+                        </div>
+                        </div>
+                            <div class="col-md-2 ">
                                 <?= $ligne['droite']?>
                             </div>
+                            <div class="col-md-offset-1">
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    
+                
             </div>
             <?php } ?>
         </form>

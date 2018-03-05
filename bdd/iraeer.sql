@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 26 fév. 2018 à 10:55
+-- Généré le :  lun. 05 mars 2018 à 11:50
 -- Version du serveur :  10.1.30-MariaDB
--- Version de PHP :  7.2.1
+-- Version de PHP :  7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,8 +37,59 @@ CREATE TABLE `campagne` (
   `id_exp5` int(11) DEFAULT NULL,
   `quest` int(11) NOT NULL,
   `statut` tinyint(1) NOT NULL DEFAULT '0',
-  `état` tinyint(1) NOT NULL DEFAULT '0'
+  `état` tinyint(1) NOT NULL DEFAULT '0',
+  `config` int(11) NOT NULL,
+  `descr` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `donneeattr`
+--
+
+CREATE TABLE `donneeattr` (
+  `id` int(11) NOT NULL,
+  `gauche` varchar(50) NOT NULL,
+  `droite` varchar(50) NOT NULL,
+  `inv` tinyint(1) NOT NULL DEFAULT '0',
+  `partie` varchar(5) NOT NULL,
+  `numeroPartie` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `donneeattr`
+--
+
+INSERT INTO `donneeattr` (`id`, `gauche`, `droite`, `inv`, `partie`, `numeroPartie`) VALUES
+(1, 'Humain', 'Technique', 1, 'QP', 1),
+(2, 'M\'isole', 'Me sociabilise', 0, 'QHI', 1),
+(3, 'Plaisant', 'Déplaisant', 1, 'ATT', 1),
+(4, 'Original', 'Conventionnel', 1, 'QHS', 1),
+(5, 'Simple', 'Compliqué', 1, 'QP', 2),
+(6, 'Professionnel', 'Amateur', 1, 'QHI', 2),
+(7, 'Laid', 'Beau', 0, 'ATT', 2),
+(8, 'Pratique', 'Pas pratique', 1, 'QP', 3),
+(9, 'Agréable', 'Désagréable', 1, 'ATT', 3),
+(10, 'Fastidieux', 'Efficace', 0, 'QP', 4),
+(11, 'De bon goût', 'De mauvais goût', 1, 'QHI', 3),
+(12, 'Prévisible', 'Imprévisible', 1, 'QP', 5),
+(13, 'Bas de gamme', 'Haut de gamme', 0, 'QHI', 4),
+(14, 'M\'exclut', 'M\'intègre', 0, 'QHI', 5),
+(15, 'Me rapproche des autres', 'Me sépare des autres', 1, 'QHI', 6),
+(16, 'Non présentable', 'Présentable', 0, 'QHI', 7),
+(17, 'Rebutant', 'Attirant', 0, 'ATT', 4),
+(18, 'Sans imagination', 'Créatif', 0, 'QHS', 2),
+(19, 'Bon', 'Mauvais', 1, 'ATT', 5),
+(20, 'Confus', 'Clair', 0, 'QP', 6),
+(21, 'Repoussant', 'Attrayants', 0, 'ATT', 6),
+(22, 'Audacieux', 'Prudent', 1, 'QHS', 3),
+(23, 'Novateur', 'Consevateur', 1, 'QHS', 4),
+(24, 'Ennuyeux', 'Captivant', 0, 'QHS', 5),
+(25, 'Peu exigeant', 'Challenging', 0, 'QHS', 6),
+(26, 'Motivant', 'Décourageant', 1, 'ATT', 7),
+(27, 'Nouveau', 'Commun', 1, 'QHS', 7),
+(28, 'Incontrôlable', 'Maîtrisable', 0, 'QP', 7);
 
 -- --------------------------------------------------------
 
@@ -55,14 +106,6 @@ CREATE TABLE `profil` (
   `mdp` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `profil`
---
-
-INSERT INTO `profil` (`id`, `nom`, `prenom`, `naissance`, `login`, `mdp`) VALUES
-(0, 'Cantagrel', 'Alice', '0000-00-00', 'alice', 'test'),
-(1, 'Dupont', 'Jean', '1970-01-01', 'jean', 'password');
-
 -- --------------------------------------------------------
 
 --
@@ -72,6 +115,8 @@ INSERT INTO `profil` (`id`, `nom`, `prenom`, `naissance`, `login`, `mdp`) VALUES
 CREATE TABLE `reponse` (
   `id_camp` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `ordre` tinyint(1) NOT NULL DEFAULT '0',
+  `interface` tinyint(1) NOT NULL DEFAULT '0',
   `QP1` int(11) NOT NULL,
   `QP2` int(11) NOT NULL,
   `QP3` int(11) NOT NULL,
@@ -127,7 +172,7 @@ ALTER TABLE `profil`
 -- Index pour la table `reponse`
 --
 ALTER TABLE `reponse`
-  ADD PRIMARY KEY (`id_camp`,`id_user`),
+  ADD PRIMARY KEY (`id_camp`,`id_user`,`interface`),
   ADD KEY `profil` (`id_user`),
   ADD KEY `id_camp` (`id_camp`);
 
