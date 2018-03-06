@@ -60,12 +60,22 @@
                             return $auteur;
                         }
 
+                        $compteurCampagne=0;
+                        $req3 = "SELECT EXISTS(SELECT * FROM campagne WHERE id IS NOT NULL) AS camp_exists";
+                        $res3 = $BDD->query($req3);
+                        $exist=$res3->fetch();
+                        if ($exist['camp_exists'])
+                        { 
+                            $compteurCampagne++;
+                        }
                         //requete qui cherche les colonnes 'id_experimentateur' qui possèdent une valeur et affiche le nom correspondant à l'id_exp
-                        for ($numeroCampagne=0; $numeroCampagne<2;$numeroCampagne++)
-                        //ATTENTION !!!!!!!!!!!!!!!!!!!!!!! Faut trouver comment limiter le numero de campagnes !
+                        for ($numeroCampagne=0; $numeroCampagne<=$compteurCampagne;$numeroCampagne++)
                         {
                             presCamp($numeroCampagne);
                             print("Auteur(s) : ");
+                            ?>
+                            <i>
+                            <?php
                             for ($i=1; $i<=5; $i++)
                             {
                                 $req2 ="SELECT * FROM campagne WHERE id_exp$i IS NOT NULL GROUP BY id HAVING id=$numeroCampagne"; 
@@ -76,11 +86,16 @@
                                     print(requeteAuteur("campagne.id_exp$i",$numeroCampagne)." ; ");
                                 }
                             }
+                            ?>
+                            </i>
+                            <?php
                             if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
                                 ?>
                                 <br/>
-                                <a href="repondrecamp.php?id=<?=$id?>">Participer</a>
+                                <a href="repondrecamp.php?id=<?=$id?>" style="float: right;">Participer</a>
+                                <br/>
+                                <hr/>
                                 <!--<form action="repondrecamp.php?id=<?=$id?>">
                                     <input type="submit" value="Participer" />
                                 </form>-->
@@ -90,13 +105,14 @@
                             <br/><br/>
                             <?php
                         }
+               
                         ?>
                         
                     
 
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3" id="colButton">
                 <?php
                     include "../includes/buttons.php";
                 ?>

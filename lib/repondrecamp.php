@@ -17,6 +17,7 @@
         <?php 
             include "../includes/navBar.php";
             include "../includes/connect.php";
+            include "../includes/functions.php";
         ?>
 
         <div class="row">
@@ -36,26 +37,31 @@
                         //$annee=$tab['ANNEE']; IDEE
                         ?>
                         <h4><?=$titre?></h4>
-                        <div><?=$desc?></div>
-                        <div><?=$auteur1?></div>
+                        <div style="text-indent: 15px;" ><?=$desc?><br/><br/></div>
+                        <i>
                         <?php
-                        /*for ($i=1; $i<=5; $i++)
+                            for ($i=1; $i<=5; $i++)
                             {
-                                $req2 ="SELECT * FROM campagne WHERE id_exp$i IS NOT NULL GROUP BY id HAVING id=$numeroCampagne"; 
+                                $req2 ="SELECT * FROM campagne WHERE id_exp$i IS NOT NULL GROUP BY id HAVING id=$id"; 
                                 $res2 = $BDD->query($req2);
                                 while($campagne=$res2->fetch())
                                 {
                                     $id=escape($campagne['id']);
-                                    print(requeteAuteur("campagne.id_exp$i",$numeroCampagne)." ; ");
+                                    print(requeteAuteur("campagne.id_exp$i",$id)." ; ");
                                 }
-                            }*/
+                            }
                         ?>
+                        </i>
+                        <br/><br/><br/>
+                        <p style="text-align: center;">
+                            <a href="attrakdiff.php">Répondre</a>
+                        </p>
                     <?php
                     }
                 ?>
 
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3" id="colButton">
                 <?php
                     include "../includes/buttons.php";
                 ?>
