@@ -35,8 +35,8 @@
                             $res3 = $BDD->query($req3);
                             while($campagne=$res3->fetch())
                             {
-                                $titre = $campagne['titre'];
-                                $desc = $campagne['description'];
+                                $titre = escape($campagne['titre']);
+                                $desc = escape($campagne['description']);
                                 ?> 
                                 <h4><?=$titre?></h4>
                                 <div style="text-indent: 15px;"><?=$desc?></div>
@@ -44,9 +44,7 @@
                             }
                         }
                         
-                             
-
-
+                    
                         function requeteAuteur($id_exp,$numeroCampagne)
                         {
                             //retourne le nom du profil associé à l'id_expérimentateur de la table campagne
@@ -55,8 +53,8 @@
                             $res = $BDD->query($req);
                             while($camp=$res->fetch())
                             {
-                                $auteurP= $camp['prenom'];
-                                $auteurN= $camp['nom'];
+                                $auteurP= escape($camp['prenom']);
+                                $auteurN= escape($camp['nom']);
                                 $auteur = "$auteurP $auteurN";
                             }  
                             return $auteur;
@@ -74,16 +72,18 @@
                                 $res2 = $BDD->query($req2);
                                 while($campagne=$res2->fetch())
                                 {
+                                    $id=escape($campagne['id']);
                                     print(requeteAuteur("campagne.id_exp$i",$numeroCampagne)." ; ");
                                 }
                             }
                             if (array_key_exists('login',$_SESSION) and array_key_exists('mdp',$_SESSION))
                             {
                                 ?>
-                                <br/><br/>
-                                <form action="#">
+                                <br/>
+                                <a href="repondrecamp.php?id=<?=$id?>">Participer</a>
+                                <!--<form action="repondrecamp.php?id=<?=$id?>">
                                     <input type="submit" value="Participer" />
-                                </form>
+                                </form>-->
                             <?php
                             }
                             ?> 
