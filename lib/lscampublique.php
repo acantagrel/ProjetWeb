@@ -27,11 +27,11 @@
                         //BDD
                         
                         //requete titre 
-                        $numeroCampagne = 0;
+                        //$numeroCampagne = 0;
                         function presCamp ($numCampagne) 
                         {
                             $BDD = new PDO("mysql:host=localhost;dbname=iraeer;charset=utf8","BouCan","surprise",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-                            $req3 = "SELECT * FROM campagne WHERE id=$numCampagne";
+                            $req3 = "SELECT * FROM campagne WHERE id=$numCampagne AND statut=0";
                             $res3 = $BDD->query($req3);
                             while($campagne=$res3->fetch())
                             {
@@ -60,16 +60,17 @@
                             return $auteur;
                         }
 
+
+                        
                         $compteurCampagne=0;
-                        $req3 = "SELECT EXISTS(SELECT * FROM campagne WHERE id IS NOT NULL) AS camp_exists";
+                        $req3 = "SELECT * FROM campagne WHERE statut = 0";
                         $res3 = $BDD->query($req3);
-                        $exist=$res3->fetch();
-                        if ($exist['camp_exists'])
-                        { 
-                            $compteurCampagne++;
-                        }
+                        while($exist=$res3->fetch())
+                            { 
+                                $compteurCampagne++;
+                            }
                         //requete qui cherche les colonnes 'id_experimentateur' qui possèdent une valeur et affiche le nom correspondant à l'id_exp
-                        for ($numeroCampagne=0; $numeroCampagne<=$compteurCampagne;$numeroCampagne++)
+                        for ($numeroCampagne=0; $numeroCampagne<$compteurCampagne;$numeroCampagne++)
                         {
                             presCamp($numeroCampagne);
                             print("Auteur(s) : ");
